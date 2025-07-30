@@ -747,132 +747,108 @@
 .product-card:nth-child(4) { animation-delay: 0.3s; }
 
 
-/* === Added for Enhanced Responsiveness === */
+/* === Revised & More Aggressive Responsive Fixes === */
 
-/* --- Tablet (Portrait) & Large Phones (e.g., max-width: 992px) --- */
-@media (max-width: 992px) {
-    .hero-content h1 {
-        font-size: 3rem; /* Slightly smaller hero title */
-    }
-
-    .hero-content h2 {
-        font-size: 1.8rem;
-    }
-
-    /* On tablets, display sidebar items side-by-side for better use of space */
-    .sidebar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .sidebar-item {
-        flex: 1 1 200px; /* Allow items to grow and shrink as needed */
-        margin: 0;
-    }
-}
-
-/* --- Refining the existing 768px breakpoint for Small Tablets & Mobiles --- */
-@media (max-width: 768px) {
-    .product-card {
-        padding: 25px; /* Reduce padding on product cards */
-    }
-
-    /* Stack the main action buttons vertically */
-    .buttons {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    .buttons button {
-        width: 100%;
-        max-width: 320px; /* Prevent buttons from becoming too wide */
-        justify-content: center;
-    }
-
-    .main-image-container {
-        padding-top: 100%; /* Adjust image aspect ratio for portrait screens */
-    }
-
-    .footer-content {
-        text-align: center; /* Center footer content on mobile */
-    }
-
-    .footer-section {
-        padding: 1rem 0;
-    }
-}
-
-
-/* --- Small Mobile Phones (e.g., max-width: 480px) --- */
-@media (max-width: 480px) {
-    body {
-        font-size: 15px; /* Adjust base font size for better readability */
-    }
-
+/* --- General Tablet & Mobile Stacking (max-width: 1200px) --- */
+@media (max-width: 1200px) {
+    /* This rule from your original code is correct, it stacks the main layout */
     .container {
-        padding: 0 1rem; /* Further reduce container padding */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+    .main-home {
+        grid-template-columns: 1fr;
     }
 
-    .header .search-bar {
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem; /* Further reduce hero title */
-    }
-
-    .hero-content h2 {
-        font-size: 1.3rem;
-    }
-    
-    .gallery {
-        flex-wrap: wrap; /* Allow gallery thumbnails to wrap */
-        justify-content: center;
-        margin-top: 2rem;
-    }
-    
-    .gallery img {
-        width: 65px; /* Smaller gallery thumbnails */
-        height: 65px;
-    }
-
-    .page-title {
-        font-size: 2rem;
+    /* Place image above text content on tablets and mobile */
+    .hero-image-section {
+        order: -1; 
         margin-bottom: 2rem;
     }
 
-    .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Allow smaller product cards */
-        gap: 1rem;
+    /* **HERO IMAGE FIX**: Override the aspect-ratio trick for a more controlled height.
+       This is the key to stopping the image from covering the whole page. */
+    .main-image-container {
+        padding-top: 0;         /* Disable the old sizing method */
+        height: 60vh;           /* Set height to 60% of the viewport's height */
+        max-height: 500px;      /* Prevent it being too tall on long/thin devices */
+        width: 100%;
     }
+}
 
-    .product-card {
-        padding: 20px;
+
+/* --- Small Tablet & Large Mobile (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* **NAVBAR FIX**: Make nav links smaller to fit on a single line */
+    header {
+        gap: 1rem; /* Adjust gap in the stacked header */
+    }
+    nav ul {
+        gap: 0.5rem; /* Reduce gap between nav items */
+        justify-content: center;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto;  /* Allow horizontal scrolling if they still don't fit */
+        -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+        scrollbar-width: none;  /* Hide scrollbar Firefox */
+        padding-bottom: 10px; /* Add space for scrollbar if it appears */
+    }
+    nav ul::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+    nav a {
+        padding: 0.5rem 0.8rem; /* Reduce padding */
+        font-size: 0.9rem;      /* Reduce font size */
+        flex-shrink: 0;         /* Prevent links from shrinking */
     }
     
-    /* Stack the search bar on the search page */
-    .search-container {
+    /* **HERO IMAGE FIX**: Make image shorter on mobile portrait */
+    .main-image-container {
+        height: 50vh; /* Reduce height further for mobile */
+    }
+
+    /* Adjust text and buttons for smaller screens */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .buttons {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* **FOOTER FIX**: Ensure footer sections don't cause overflow */
+    .footer-section {
+        min-width: 100%; /* Override min-width to allow proper stacking */
+        padding: 1rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* --- Small Mobile Phones (max-width: 480px) --- */
+@media (max-width: 480px) {
+    /* **HERO IMAGE FIX**: Make hero image even smaller on the smallest screens */
+    .main-image-container {
+        height: 40vh; 
     }
 
-    /* Make the shopping cart modal full-screen */
-    .cart-modal-panel {
-        max-width: 100%; 
+    .hero-content h1 {
+        font-size: 2.1rem;
     }
-    .cart-modal-header, .cart-modal-body, .cart-modal-footer {
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .hero-content h2 {
+        font-size: 1.2rem;
     }
 
-    .cart-item {
-        gap: 1rem;
-    }
-
-    .cart-item-img {
-        width: 80px;
-        height: 80px;
+    .container {
+        padding: 0 1rem;
     }
 }

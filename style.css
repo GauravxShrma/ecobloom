@@ -745,3 +745,134 @@
 .product-card:nth-child(2) { animation-delay: 0.1s; }
 .product-card:nth-child(3) { animation-delay: 0.2s; }
 .product-card:nth-child(4) { animation-delay: 0.3s; }
+
+
+/* === Added for Enhanced Responsiveness === */
+
+/* --- Tablet (Portrait) & Large Phones (e.g., max-width: 992px) --- */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3rem; /* Slightly smaller hero title */
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    /* On tablets, display sidebar items side-by-side for better use of space */
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .sidebar-item {
+        flex: 1 1 200px; /* Allow items to grow and shrink as needed */
+        margin: 0;
+    }
+}
+
+/* --- Refining the existing 768px breakpoint for Small Tablets & Mobiles --- */
+@media (max-width: 768px) {
+    .product-card {
+        padding: 25px; /* Reduce padding on product cards */
+    }
+
+    /* Stack the main action buttons vertically */
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .buttons button {
+        width: 100%;
+        max-width: 320px; /* Prevent buttons from becoming too wide */
+        justify-content: center;
+    }
+
+    .main-image-container {
+        padding-top: 100%; /* Adjust image aspect ratio for portrait screens */
+    }
+
+    .footer-content {
+        text-align: center; /* Center footer content on mobile */
+    }
+
+    .footer-section {
+        padding: 1rem 0;
+    }
+}
+
+
+/* --- Small Mobile Phones (e.g., max-width: 480px) --- */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px; /* Adjust base font size for better readability */
+    }
+
+    .container {
+        padding: 0 1rem; /* Further reduce container padding */
+    }
+
+    .header .search-bar {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Further reduce hero title */
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .gallery {
+        flex-wrap: wrap; /* Allow gallery thumbnails to wrap */
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    
+    .gallery img {
+        width: 65px; /* Smaller gallery thumbnails */
+        height: 65px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Allow smaller product cards */
+        gap: 1rem;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+    
+    /* Stack the search bar on the search page */
+    .search-container {
+        flex-direction: column;
+    }
+
+    /* Make the shopping cart modal full-screen */
+    .cart-modal-panel {
+        max-width: 100%; 
+    }
+    .cart-modal-header, .cart-modal-body, .cart-modal-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cart-item {
+        gap: 1rem;
+    }
+
+    .cart-item-img {
+        width: 80px;
+        height: 80px;
+    }
+}

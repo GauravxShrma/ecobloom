@@ -177,7 +177,37 @@
       background-color: #f0f0f0;
   }
 
-  .gallery {
+ 
+.gallery {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;      /* Stack images vertically */
+    align-items: stretch;        /* Stretch images to fill width */
+    gap: 1.5rem;                 /* Space between images */
+    width: 100%;                 /* Take full width of parent */
+}
+
+.gallery img {
+    width: 100%;                 /* Make images fill the gallery width */
+    height: 150px;               /* Make images taller (adjust as needed) */
+    max-width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s, transform 0.3s;
+}
+
+.gallery img.active {
+    border: 2px solid #4a7c59;
+    transform: scale(1.03);
+}
+
+.gallery .next-btn {
+    align-self: flex-end;        /* Button at the bottom right */
+    margin-top: 1rem;
+}
+/* ...existing code... */
       margin-top: 3rem;
       position: relative;
       display: flex;
@@ -874,4 +904,80 @@ footer {
        creating a professional, full-bleed effect. */
     box-shadow: 0 0 0 100vmax #2c573b;
     clip-path: inset(0 -100vmax);
+}
+
+/*
+=================================================================
+    14. Team Page Styles
+=================================================================
+*/
+
+.team-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-top: -1.5rem; /* Pull it closer to the main title */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: var(--color-surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Staggered animation for team cards */
+.team-card:nth-child(2) { animation-delay: 0.1s; }
+.team-card:nth-child(3) { animation-delay: 0.2s; }
+.team-card:nth-child(4) { animation-delay: 0.3s; }
+
+.team-member-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    filter: grayscale(50%);
+    transition: filter var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.team-card:hover .team-member-img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.team-member-info {
+    padding: 1.5rem;
+}
+
+.team-member-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 0.25rem;
+}
+
+.team-member-role {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    margin: 0;
 }

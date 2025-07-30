@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBloom – Buy Green, Plant Green</title>
+
+  <!-- Google fonts: elegant, slightly futuristic, italic capable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar">
+      <div class="brand">ecobloom</div>
+      <div class="category-pills">
+        <button class="pill active">Seedlings</button>
+        <button class="pill">Soil</button>
+        <button class="pill">Tools</button>
+        <button class="pill">LED Grow</button>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Search…" />
+      </div>
+  </header>
+
+  <!-- 3‑column shell mimicking Realme layout -->
+  <main class="grid-shell">
+
+    <!-- LEFT SIDEBAR  (product intro) -->
+    <aside class="left-panel">
+      <h1 class="product-title">Bamboo<br><span>Watering&nbsp;Can</span></h1>
+      <p class="subtitle">
+        Crafted from sustainable bamboo &amp; stainless steel.
+        Every purchase plants <strong>one tree</strong> through our ReForest programme.
+      </p>
+
+      <button class="cta primary">Buy&nbsp;Now &nbsp;→</button>
+      <button class="cta ghost">Explore Range</button>
+
+      <!-- thumbnails (optional) -->
+      <div class="thumb-strip">
+        <img src="assets/hero.mp4#t=5" alt="thumb 1">
+        <img src="assets/hero.mp4#t=10" alt="thumb 2">
+        <img src="assets/hero.mp4#t=15" alt="thumb 3">
+      </div>
+    </aside>
+
+    <!-- CENTRE HERO -->
+    <section class="hero">
+        <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
+        <!-- floating counter overlay -->
+        <div class="counter-badge" id="treeCounter">🌳 0 trees planted</div>
+    </section>
+
+    <!-- RIGHT FEATURE STACK -->
+    <aside class="feature-stack">
+        <div class="feature-card">
+          <img src="assets/icon‑recycle.svg" alt="" />
+          <h3>100 % Recycled<br>Packaging</h3>
+        </div>
+        <div class="feature-card">
+          <img src="assets/icon‑charge.svg" alt="" />
+          <h3>Zero‑Waste<br>Manufacture</h3>
+        </div>
+        <div class="feature-card">
+          <img src="assets/icon‑co2.svg" alt="" />
+          <h3>Carbon‑Neutral<br>Shipping</h3>
+        </div>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

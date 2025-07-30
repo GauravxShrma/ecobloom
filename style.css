@@ -852,3 +852,26 @@
         padding: 0 1rem;
     }
 }
+/* === Final Polish for Mobile & Footer === */
+
+/* --- 1. Add Consistent Edge Padding on Mobile --- */
+/* This rule applies to all screens 768px or narrower */
+@media (max-width: 768px) {
+    /* This adds space on the left and right, so your content no longer
+       sticks to the screen edges on mobile devices. */
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+
+/* --- 2. Make Footer Background Span Full Screen Width --- */
+/* This targets your footer on all screen sizes. */
+footer {
+    /* This clever trick uses a massive, clipped box-shadow to extend the
+       background color to the very edges of the browser window,
+       creating a professional, full-bleed effect. */
+    box-shadow: 0 0 0 100vmax #2c573b;
+    clip-path: inset(0 -100vmax);
+}

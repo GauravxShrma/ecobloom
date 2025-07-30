@@ -63,14 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchInput && searchButton && searchResultsContainer) {
         // A mock database of all products
         const allProducts = [
-            { name: 'Terracotta Pot', price: '$12.99', img: 'https://images.unsplash.com/photo-1599102838323-de282b9a3594?q=80&w=1974&auto=format&fit=crop', category: 'pot' },
-            { name: 'Ceramic Planter', price: '$19.99', img: 'https://images.unsplash.com/photo-1614594975525-e4d1424a721a?q=80&w=1974&auto=format&fit=crop', category: 'pot' },
-            { name: 'Hanging Pot', price: '$24.99', img: 'https://images.unsplash.com/photo-1600421539353-8b5b934052ad?q=80&w=1974&auto=format&fit=crop', category: 'pot' },
-            { name: 'Biodegradable Peat Pot', price: '$9.99', img: 'https://images.unsplash.com/photo-1586581123559-8d7450884a77?q=80&w=1974&auto=format&fit=crop', category: 'pot' },
-            { name: 'Pruning Shears', price: '$22.50', img: 'https://images.unsplash.com/photo-1619642751215-72d224155934?q=80&w=1974&auto=format&fit=crop', category: 'cutter' },
-            { name: 'Gardening Scissors', price: '$15.00', img: 'https://images.unsplash.com/photo-1620257983636-ba44244de438?q=80&w=1974&auto=format&fit=crop', category: 'cutter' },
-            { name: 'Heavy Duty Loppers', price: '$35.99', img: 'https://images.unsplash.com/photo-1563295985-202a73e65347?q=80&w=2128&auto=format&fit=crop', category: 'cutter' },
-            { name: 'Organic Fertilizer', price: '$18.00', img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop', category: 'fertilizer' }
+            { name: 'Terracotta Pot', price: '₹1300', img: './Images/Terracotta Pot.webp', category: 'pot' },
+            { name: 'Ceramic Planter', price: '₹1700', img: './Images/Ceramic Planter.webp', category: 'pot' },
+            { name: 'Hanging Pot', price: '₹2100', img: './Images/Hanging Pot.webp', category: 'pot' },
+            { name: 'Pruning Shears', price: '₹2000', img: './Images/Pruning Shears.avif', category: 'cutter' },
+            { name: 'Gardening Scissors', price: '₹1300', img: './Images/Gardening Scissors.jpg', category: 'cutter' },
+            { name: 'Heavy Duty Loppers', price: '₹3100', img: './Images/Heavy Duty Loppers.webp', category: 'cutter' },
+            { name: 'Organic Fertilizer', price: '₹1500', img: './Images/fertilizer.png', category: 'fertilizer' }
         ];
 
         function performSearch() {

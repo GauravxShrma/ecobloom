@@ -1,77 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoBloom – Buy Green, Plant Green</title>
-
-  <!-- Google fonts: elegant, slightly futuristic, italic capable -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBloom - Grow Green</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-  <!-- TOP BAR -->
-  <header class="topbar">
-      <div class="brand">ecobloom</div>
-      <div class="category-pills">
-        <button class="pill active">Seedlings</button>
-        <button class="pill">Soil</button>
-        <button class="pill">Tools</button>
-        <button class="pill">LED Grow</button>
-      </div>
-      <div class="search">
-        <input type="text" placeholder="Search…" />
-      </div>
-  </header>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-leaf"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                <span>EcoBloom</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Gardening</a></li>
+                    <li><a href="pots.html" class="nav-link">Pots</a></li>
+                    <li><a href="plant-cutters.html" class="nav-link">Plant Cutters</a></li>
+                    <li><a href="search.html" class="nav-link">Search</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <i data-feather="search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </header>
 
-  <!-- 3‑column shell mimicking Realme layout -->
-  <main class="grid-shell">
+        <main class="main-home">
+            <div class="hero-content">
+                <h1>EcoBloom</h1>
+                <h2>Grow green. Every purchase plants a tree.</h2>
+                <p><i data-feather="check-square" class="check-icon"></i> For every eco-friendly product sold, a tree is planted in areas in need of reforestation. Shop natural fertilizers, biodegradable pots, and plant care essentials. Make a difference with your purchase.</p>
+                <div class="buttons">
+                    <button class="pre-order-btn"><i data-feather="gift"></i> PRE-ORDER</button>
+                    <button class="explore-btn"><i data-feather="search"></i> EXPLORE</button>
+                </div>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop" alt="Lush green leaves" class="active">
+                    <img src="https://images.unsplash.com/photo-1497990571654-77aa8ec36038?q=80&w=1964&auto=format&fit=crop" alt="Close up of a plant">
+                    <img src="./Images/gardening tools.png" alt="Gardening tools">
+                    <button class="next-btn"><i data-feather="chevron-right"></i></button>
+                </div>
+            </div>
 
-    <!-- LEFT SIDEBAR  (product intro) -->
-    <aside class="left-panel">
-      <h1 class="product-title">Bamboo<br><span>Watering&nbsp;Can</span></h1>
-      <p class="subtitle">
-        Crafted from sustainable bamboo &amp; stainless steel.
-        Every purchase plants <strong>one tree</strong> through our ReForest programme.
-      </p>
+            <div class="hero-image-section">
+                <div class="main-image-container">
+                     <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1974&auto=format&fit=crop" alt="Gardening trowel in soil">
+                     <div class="trees-planted-counter">
+                        <i data-feather="tree-pine"></i>
+                        <span>Trees planted:</span>
+                        <span id="tree-count">0</span>
+                     </div>
+                </div>
+            </div>
+        </main>
 
-      <button class="cta primary">Buy&nbsp;Now &nbsp;→</button>
-      <button class="cta ghost">Explore Range</button>
+        <aside class="sidebar">
+            <div class="sidebar-item">
+                <h3>NATURAL FERTILIZER</h3>
+                <div class="sidebar-image-container">
+                    <img src="./Images/fertiizer.png" alt="Bag of organic fertilizer">
+                </div>
+                <p>100% ORGANIC</p>
+            </div>
+            <div class="sidebar-item">
+                <h3>BIODEGRADABLE POTS</h3>
+                 <div class="sidebar-image-container pot-icon">
+                     <img src="./Images/pot.png" alt="Pot">
+                 </div>
+                <p>Reduced landfill fowaste.</p>
+            </div>
+            <div class="sidebar-item">
+                <h3>CONSERVE WATER</h3>
+                <div class="sidebar-image-container water-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </div>
+                <p>Plant care that conserves.</p>
+            </div>
+        </aside>
 
-      <!-- thumbnails (optional) -->
-      <div class="thumb-strip">
-        <img src="assets/hero.mp4#t=5" alt="thumb 1">
-        <img src="assets/hero.mp4#t=10" alt="thumb 2">
-        <img src="assets/hero.mp4#t=15" alt="thumb 3">
-      </div>
-    </aside>
-
-    <!-- CENTRE HERO -->
-    <section class="hero">
-        <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
-        <!-- floating counter overlay -->
-        <div class="counter-badge" id="treeCounter">🌳 0 trees planted</div>
-    </section>
-
-    <!-- RIGHT FEATURE STACK -->
-    <aside class="feature-stack">
-        <div class="feature-card">
-          <img src="assets/icon‑recycle.svg" alt="" />
-          <h3>100 % Recycled<br>Packaging</h3>
-        </div>
-        <div class="feature-card">
-          <img src="assets/icon‑charge.svg" alt="" />
-          <h3>Zero‑Waste<br>Manufacture</h3>
-        </div>
-        <div class="feature-card">
-          <img src="assets/icon‑co2.svg" alt="" />
-          <h3>Carbon‑Neutral<br>Shipping</h3>
-        </div>
-    </aside>
-
-  </main>
-
-  <script src="script.js"></script>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h1 class="logo-text"><span>Eco</span>Bloom</h1>
+                    <p>
+                        EcoBloom is dedicated to providing sustainable and eco-friendly gardening products. With every purchase, we plant a tree to help with reforestation efforts worldwide.
+                    </p>
+                    <div class="contact">
+                        <span><i data-feather="phone"></i> &nbsp; 123-456-7890</span>
+                        <span><i data-feather="mail"></i> &nbsp; info@ecobloom.com</span>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact-form">
+                    <h2>Contact Us</h2>
+                    <form action="#">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                        <button type="submit" class="btn btn-big contact-btn">
+                            <i data-feather="send"></i>
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; ecobloom.com | Designed by You
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        feather.replace()
+    </script>
 </body>
 </html>
